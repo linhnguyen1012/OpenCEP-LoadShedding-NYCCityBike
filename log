@@ -1,0 +1,404 @@
+Max records: 30,000
+Max patterns: 8,000
+Loaded 30,000 real Citi Bike events
+Hot destination trips: 2,273 (7.6%)
+Unique bikes: 8,275
+Unique start stations: 22
+Unique end stations: 614
+Skipped invalid records: 0
+Create realistic hot path patterns from real data...
+Target: up to 8,000 patterns
+Created 3,024 real hot path patterns
+Hot patterns: 3,024 (100.0%)
+Average complexity: 4.4
+Average duration: -5928.7 minutes
+Bikes in patterns: 1,044
+Hot station distribution:
+   Station 293: 395 patterns (13.1%)
+   Station 497: 383 patterns (12.7%)
+   Station 519: 353 patterns (11.7%)
+   Station 387: 305 patterns (10.1%)
+   Station 285: 300 patterns (9.9%)
+
+Establishing baseline with real data...
+Real Data Baseline: 2,000 patterns, P95=0.000ms
+
+Real Data Latency Bounds:
+   • 50%: 0.01ms
+   • 60%: 0.01ms
+   • 70%: 0.01ms
+   • 80%: 0.02ms
+   • 90%: 0.03ms
+strategy simple
+SIMPLE: max_size=600, target=1,100, overhead=2.2x
+ 600/1,100 = 54.5% recall, P95=0.001ms
+ 600/1,100 = 54.5% hot recall
+new best: 54.5% recall, P95=0.0ms
+SIMPLE: max_size=1,100, target=1,600, overhead=2.4x
+ 1,100/1,600 = 68.8% recall, P95=0.001ms
+ 1,100/1,600 = 68.8% hot recall
+new best: 68.8% recall, P95=0.0ms
+SIMPLE: max_size=1,600, target=2,100, overhead=2.6x
+ 1,600/2,100 = 76.2% recall, P95=0.001ms
+ 1,600/2,100 = 76.2% hot recall
+new best: 76.2% recall, P95=0.0ms
+SIMPLE: max_size=700, target=1,200, overhead=2.0x
+ 700/1,200 = 58.3% recall, P95=0.001ms
+ 700/1,200 = 58.3% hot recall
+new best: 58.3% recall, P95=0.0ms
+SIMPLE: max_size=1,200, target=1,700, overhead=2.2x
+ 1,200/1,700 = 70.6% recall, P95=0.001ms
+ 1,200/1,700 = 70.6% hot recall
+new best: 70.6% recall, P95=0.0ms
+SIMPLE: max_size=1,700, target=2,200, overhead=2.4x
+ 1,700/2,200 = 77.3% recall, P95=0.001ms
+ 1,700/2,200 = 77.3% hot recall
+new best: 77.3% recall, P95=0.0ms
+SIMPLE: max_size=800, target=1,300, overhead=1.8x
+ 800/1,300 = 61.5% recall, P95=0.001ms
+ 800/1,300 = 61.5% hot recall
+new best: 61.5% recall, P95=0.0ms
+SIMPLE: max_size=1,300, target=1,800, overhead=2.0x
+ 1,300/1,800 = 72.2% recall, P95=0.001ms
+ 1,300/1,800 = 72.2% hot recall
+new best: 72.2% recall, P95=0.0ms
+SIMPLE: max_size=1,800, target=2,300, overhead=2.2x
+ 1,800/2,300 = 78.3% recall, P95=0.001ms
+ 1,800/2,300 = 78.3% hot recall
+new best: 78.3% recall, P95=0.0ms
+SIMPLE: max_size=900, target=1,400, overhead=1.6x
+ 900/1,400 = 64.3% recall, P95=0.001ms
+ 900/1,400 = 64.3% hot recall
+new best: 64.3% recall, P95=0.0ms
+SIMPLE: max_size=1,400, target=1,900, overhead=1.8x
+ 1,400/1,900 = 73.7% recall, P95=0.001ms
+ 1,400/1,900 = 73.7% hot recall
+new best: 73.7% recall, P95=0.0ms
+SIMPLE: max_size=1,900, target=2,400, overhead=2.0x
+ 1,900/2,400 = 79.2% recall, P95=0.002ms
+ 1,900/2,400 = 79.2% hot recall
+new best: 79.2% recall, P95=0.0ms
+SIMPLE: max_size=1,000, target=1,500, overhead=1.4x
+ 1,000/1,500 = 66.7% recall, P95=0.001ms
+ 1,000/1,500 = 66.7% hot recall
+new best: 66.7% recall, P95=0.0ms
+SIMPLE: max_size=1,500, target=2,000, overhead=1.6x
+ 1,500/2,000 = 75.0% recall, P95=0.001ms
+ 1,500/2,000 = 75.0% hot recall
+new best: 75.0% recall, P95=0.0ms
+SIMPLE: max_size=2,000, target=2,500, overhead=1.8x
+ 2,000/2,500 = 80.0% recall, P95=0.001ms
+ 2,000/2,500 = 80.0% hot recall
+new best: 80.0% recall, P95=0.0ms
+strategy efficient
+EFFICIENT: max_size=1,000, target=1,500, overhead=1.8x
+ 999/1,500 = 66.6% recall, P95=0.001ms
+ 999/1,500 = 66.6% hot recall
+new best: 66.6% recall, P95=0.0ms
+EFFICIENT: max_size=1,500, target=2,000, overhead=2.0x
+ 1,249/2,000 = 62.5% recall, P95=0.001ms
+ 1,249/2,000 = 62.5% hot recall
+EFFICIENT: max_size=2,000, target=2,500, overhead=2.2x
+ 1,499/2,500 = 60.0% recall, P95=0.002ms
+ 1,499/2,500 = 60.0% hot recall
+EFFICIENT: max_size=1,100, target=1,600, overhead=1.6x
+ 1,049/1,600 = 65.6% recall, P95=0.002ms
+ 1,049/1,600 = 65.6% hot recall
+new best: 65.6% recall, P95=0.0ms
+EFFICIENT: max_size=1,600, target=2,100, overhead=1.8x
+ 1,299/2,100 = 61.9% recall, P95=0.002ms
+ 1,299/2,100 = 61.9% hot recall
+EFFICIENT: max_size=2,100, target=2,600, overhead=2.0x
+ 1,549/2,600 = 59.6% recall, P95=0.002ms
+ 1,549/2,600 = 59.6% hot recall
+EFFICIENT: max_size=1,200, target=1,700, overhead=1.4x
+ 1,099/1,700 = 64.6% recall, P95=0.001ms
+ 1,099/1,700 = 64.6% hot recall
+new best: 64.6% recall, P95=0.0ms
+EFFICIENT: max_size=1,700, target=2,200, overhead=1.6x
+ 1,349/2,200 = 61.3% recall, P95=0.001ms
+ 1,349/2,200 = 61.3% hot recall
+EFFICIENT: max_size=2,200, target=2,700, overhead=1.8x
+ 1,599/2,700 = 59.2% recall, P95=0.001ms
+ 1,599/2,700 = 59.2% hot recall
+EFFICIENT: max_size=1,300, target=1,800, overhead=1.2x
+ 1,149/1,800 = 63.8% recall, P95=0.001ms
+ 1,149/1,800 = 63.8% hot recall
+new best: 63.8% recall, P95=0.0ms
+EFFICIENT: max_size=1,800, target=2,300, overhead=1.4x
+ 1,399/2,300 = 60.8% recall, P95=0.001ms
+ 1,399/2,300 = 60.8% hot recall
+EFFICIENT: max_size=2,300, target=2,800, overhead=1.6x
+ 1,649/2,800 = 58.9% recall, P95=0.001ms
+ 1,649/2,800 = 58.9% hot recall
+EFFICIENT: max_size=1,500, target=2,000, overhead=1.0x
+ 1,249/2,000 = 62.5% recall, P95=0.001ms
+ 1,249/2,000 = 62.5% hot recall
+new best: 62.5% recall, P95=0.0ms
+EFFICIENT: max_size=2,000, target=2,500, overhead=1.2x
+ 1,499/2,500 = 60.0% recall, P95=0.001ms
+ 1,499/2,500 = 60.0% hot recall
+EFFICIENT: max_size=2,500, target=3,000, overhead=1.4x
+ 1,749/3,000 = 58.3% recall, P95=0.001ms
+ 1,749/3,000 = 58.3% hot recall
+strategy fifo
+FIFO: max_size=800, target=1,300, overhead=1.9x
+ 800/1,300 = 61.5% recall, P95=0.001ms
+ 800/1,300 = 61.5% hot recall
+new best: 61.5% recall, P95=0.0ms
+FIFO: max_size=1,300, target=1,800, overhead=2.1x
+ 1,300/1,800 = 72.2% recall, P95=0.001ms
+ 1,300/1,800 = 72.2% hot recall
+new best: 72.2% recall, P95=0.0ms
+FIFO: max_size=1,800, target=2,300, overhead=2.3x
+ 1,800/2,300 = 78.3% recall, P95=0.001ms
+ 1,800/2,300 = 78.3% hot recall
+new best: 78.3% recall, P95=0.0ms
+FIFO: max_size=900, target=1,400, overhead=1.7x
+ 900/1,400 = 64.3% recall, P95=0.001ms
+ 900/1,400 = 64.3% hot recall
+new best: 64.3% recall, P95=0.0ms
+FIFO: max_size=1,400, target=1,900, overhead=1.9x
+ 1,400/1,900 = 73.7% recall, P95=0.001ms
+ 1,400/1,900 = 73.7% hot recall
+new best: 73.7% recall, P95=0.0ms
+FIFO: max_size=1,900, target=2,400, overhead=2.1x
+ 1,900/2,400 = 79.2% recall, P95=0.001ms
+ 1,900/2,400 = 79.2% hot recall
+new best: 79.2% recall, P95=0.0ms
+FIFO: max_size=1,000, target=1,500, overhead=1.5x
+ 1,000/1,500 = 66.7% recall, P95=0.001ms
+ 1,000/1,500 = 66.7% hot recall
+new best: 66.7% recall, P95=0.0ms
+FIFO: max_size=1,500, target=2,000, overhead=1.7x
+ 1,500/2,000 = 75.0% recall, P95=0.001ms
+ 1,500/2,000 = 75.0% hot recall
+new best: 75.0% recall, P95=0.0ms
+FIFO: max_size=2,000, target=2,500, overhead=1.9x
+ 2,000/2,500 = 80.0% recall, P95=0.001ms
+ 2,000/2,500 = 80.0% hot recall
+new best: 80.0% recall, P95=0.0ms
+FIFO: max_size=1,100, target=1,600, overhead=1.3x
+ 1,100/1,600 = 68.8% recall, P95=0.001ms
+ 1,100/1,600 = 68.8% hot recall
+new best: 68.8% recall, P95=0.0ms
+FIFO: max_size=1,600, target=2,100, overhead=1.5x
+ 1,600/2,100 = 76.2% recall, P95=0.001ms
+ 1,600/2,100 = 76.2% hot recall
+new best: 76.2% recall, P95=0.0ms
+FIFO: max_size=2,100, target=2,600, overhead=1.7x
+ 2,100/2,600 = 80.8% recall, P95=0.001ms
+ 2,100/2,600 = 80.8% hot recall
+new best: 80.8% recall, P95=0.0ms
+FIFO: max_size=1,200, target=1,700, overhead=1.1x
+ 1,200/1,700 = 70.6% recall, P95=0.001ms
+ 1,200/1,700 = 70.6% hot recall
+new best: 70.6% recall, P95=0.0ms
+FIFO: max_size=1,700, target=2,200, overhead=1.3x
+ 1,700/2,200 = 77.3% recall, P95=0.001ms
+ 1,700/2,200 = 77.3% hot recall
+new best: 77.3% recall, P95=0.0ms
+FIFO: max_size=2,200, target=2,700, overhead=1.5x
+ 2,200/2,700 = 81.5% recall, P95=0.001ms
+ 2,200/2,700 = 81.5% hot recall
+new best: 81.5% recall, P95=0.0ms
+strategy batched
+BATCHED: max_size=700, target=1,200, overhead=2.0x
+ 568/1,200 = 47.3% recall, P95=0.001ms
+ 568/1,200 = 47.3% hot recall
+new best: 47.3% recall, P95=0.0ms
+BATCHED: max_size=1,200, target=1,700, overhead=2.2x
+ 1,159/1,700 = 68.2% recall, P95=0.001ms
+ 1,159/1,700 = 68.2% hot recall
+new best: 68.2% recall, P95=0.0ms
+BATCHED: max_size=1,700, target=2,200, overhead=2.4x
+ 1,434/2,200 = 65.2% recall, P95=0.001ms
+ 1,434/2,200 = 65.2% hot recall
+BATCHED: max_size=800, target=1,300, overhead=1.8x
+ 939/1,300 = 72.2% recall, P95=0.002ms
+ 939/1,300 = 72.2% hot recall
+new best: 72.2% recall, P95=0.0ms
+BATCHED: max_size=1,300, target=1,800, overhead=2.0x
+ 1,214/1,800 = 67.4% recall, P95=0.002ms
+ 1,214/1,800 = 67.4% hot recall
+BATCHED: max_size=1,800, target=2,300, overhead=2.2x
+ 1,489/2,300 = 64.7% recall, P95=0.001ms
+ 1,489/2,300 = 64.7% hot recall
+BATCHED: max_size=900, target=1,400, overhead=1.6x
+ 994/1,400 = 71.0% recall, P95=0.001ms
+ 994/1,400 = 71.0% hot recall
+new best: 71.0% recall, P95=0.0ms
+BATCHED: max_size=1,400, target=1,900, overhead=1.8x
+ 1,269/1,900 = 66.8% recall, P95=0.001ms
+ 1,269/1,900 = 66.8% hot recall
+BATCHED: max_size=1,900, target=2,400, overhead=2.0x
+ 1,544/2,400 = 64.3% recall, P95=0.001ms
+ 1,544/2,400 = 64.3% hot recall
+BATCHED: max_size=1,000, target=1,500, overhead=1.4x
+ 1,049/1,500 = 69.9% recall, P95=0.001ms
+ 1,049/1,500 = 69.9% hot recall
+new best: 69.9% recall, P95=0.0ms
+BATCHED: max_size=1,500, target=2,000, overhead=1.6x
+ 1,324/2,000 = 66.2% recall, P95=0.001ms
+ 1,324/2,000 = 66.2% hot recall
+BATCHED: max_size=2,000, target=2,500, overhead=1.8x
+ 1,599/2,500 = 64.0% recall, P95=0.001ms
+ 1,599/2,500 = 64.0% hot recall
+BATCHED: max_size=1,100, target=1,600, overhead=1.2x
+ 1,104/1,600 = 69.0% recall, P95=0.001ms
+ 1,104/1,600 = 69.0% hot recall
+new best: 69.0% recall, P95=0.0ms
+BATCHED: max_size=1,600, target=2,100, overhead=1.4x
+ 1,379/2,100 = 65.7% recall, P95=0.002ms
+ 1,379/2,100 = 65.7% hot recall
+BATCHED: max_size=2,100, target=2,600, overhead=1.6x
+ 1,654/2,600 = 63.6% recall, P95=0.001ms
+ 1,654/2,600 = 63.6% hot recall
+strategy random
+RANDOM: max_size=450, target=800, overhead=2.4x
+ 450/800 = 56.2% recall, P95=0.030ms
+ 450/800 = 56.2% hot recall
+bug, slow: 0.0ms > 0.0ms
+RANDOM: max_size=800, target=1,200, overhead=2.6x
+ 800/1,200 = 66.7% recall, P95=0.053ms
+ 800/1,200 = 66.7% hot recall
+bug, slow: 0.1ms > 0.0ms
+RANDOM: max_size=1,200, target=1,600, overhead=2.8x
+ 1,200/1,600 = 75.0% recall, P95=0.081ms
+ 1,200/1,600 = 75.0% hot recall
+bug, slow: 0.1ms > 0.0ms
+RANDOM: max_size=500, target=900, overhead=2.2x
+ 500/900 = 55.6% recall, P95=0.034ms
+ 500/900 = 55.6% hot recall
+bug, slow: 0.0ms > 0.0ms
+RANDOM: max_size=900, target=1,300, overhead=2.4x
+ 900/1,300 = 69.2% recall, P95=0.059ms
+ 900/1,300 = 69.2% hot recall
+bug, slow: 0.1ms > 0.0ms
+RANDOM: max_size=1,300, target=1,700, overhead=2.6x
+ 1,300/1,700 = 76.5% recall, P95=0.083ms
+ 1,300/1,700 = 76.5% hot recall
+bug, slow: 0.1ms > 0.0ms
+RANDOM: max_size=600, target=1,000, overhead=2.0x
+ 600/1,000 = 60.0% recall, P95=0.040ms
+ 600/1,000 = 60.0% hot recall
+bug, slow: 0.0ms > 0.0ms
+RANDOM: max_size=1,000, target=1,400, overhead=2.2x
+ 1,000/1,400 = 71.4% recall, P95=0.065ms
+ 1,000/1,400 = 71.4% hot recall
+bug, slow: 0.1ms > 0.0ms
+RANDOM: max_size=1,400, target=1,800, overhead=2.4x
+ 1,400/1,800 = 77.8% recall, P95=0.089ms
+ 1,400/1,800 = 77.8% hot recall
+bug, slow: 0.1ms > 0.0ms
+RANDOM: max_size=700, target=1,100, overhead=1.8x
+ 700/1,100 = 63.6% recall, P95=0.046ms
+ 700/1,100 = 63.6% hot recall
+bug, slow: 0.0ms > 0.0ms
+RANDOM: max_size=1,100, target=1,500, overhead=2.0x
+ 1,100/1,500 = 73.3% recall, P95=0.071ms
+ 1,100/1,500 = 73.3% hot recall
+bug, slow: 0.1ms > 0.0ms
+RANDOM: max_size=1,500, target=1,900, overhead=2.2x
+ 1,500/1,900 = 78.9% recall, P95=0.095ms
+ 1,500/1,900 = 78.9% hot recall
+bug, slow: 0.1ms > 0.0ms
+RANDOM: max_size=800, target=1,200, overhead=1.6x
+ 800/1,200 = 66.7% recall, P95=0.052ms
+ 800/1,200 = 66.7% hot recall
+bug, slow: 0.1ms > 0.0ms
+RANDOM: max_size=1,200, target=1,600, overhead=1.8x
+ 1,200/1,600 = 75.0% recall, P95=0.077ms
+ 1,200/1,600 = 75.0% hot recall
+bug, slow: 0.1ms > 0.0ms
+RANDOM: max_size=1,600, target=2,000, overhead=2.0x
+ 1,600/2,000 = 80.0% recall, P95=0.101ms
+ 1,600/2,000 = 80.0% hot recall
+bug, slow: 0.1ms > 0.0ms
+strategy priority
+PRIORITY: max_size=250, target=600, overhead=3.0x
+ 250/600 = 41.7% recall, P95=0.016ms
+ 250/600 = 41.7% hot recall
+bug, slow: 0.0ms > 0.0ms
+PRIORITY: max_size=600, target=1,100, overhead=3.2x
+ 600/1,100 = 54.5% recall, P95=0.035ms
+ 600/1,100 = 54.5% hot recall
+bug, slow: 0.0ms > 0.0ms
+PRIORITY: max_size=1,100, target=1,600, overhead=3.4x
+ 1,100/1,600 = 68.8% recall, P95=0.063ms
+ 1,100/1,600 = 68.8% hot recall
+bug, slow: 0.1ms > 0.0ms
+PRIORITY: max_size=300, target=700, overhead=2.8x
+ 300/700 = 42.9% recall, P95=0.019ms
+ 300/700 = 42.9% hot recall
+bug, slow: 0.0ms > 0.0ms
+PRIORITY: max_size=700, target=1,200, overhead=3.0x
+ 700/1,200 = 58.3% recall, P95=0.041ms
+ 700/1,200 = 58.3% hot recall
+bug, slow: 0.0ms > 0.0ms
+PRIORITY: max_size=1,200, target=1,700, overhead=3.2x
+ 1,200/1,700 = 70.6% recall, P95=0.068ms
+ 1,200/1,700 = 70.6% hot recall
+bug, slow: 0.1ms > 0.0ms
+PRIORITY: max_size=350, target=800, overhead=2.6x
+ 350/800 = 43.8% recall, P95=0.021ms
+ 350/800 = 43.8% hot recall
+bug, slow: 0.0ms > 0.0ms
+PRIORITY: max_size=800, target=1,300, overhead=2.8x
+ 800/1,300 = 61.5% recall, P95=0.047ms
+ 800/1,300 = 61.5% hot recall
+bug, slow: 0.0ms > 0.0ms
+PRIORITY: max_size=1,300, target=1,800, overhead=3.0x
+ 1,300/1,800 = 72.2% recall, P95=0.074ms
+ 1,300/1,800 = 72.2% hot recall
+bug, slow: 0.1ms > 0.0ms
+PRIORITY: max_size=400, target=900, overhead=2.4x
+ 400/900 = 44.4% recall, P95=0.024ms
+ 400/900 = 44.4% hot recall
+bug, slow: 0.0ms > 0.0ms
+PRIORITY: max_size=900, target=1,400, overhead=2.6x
+ 900/1,400 = 64.3% recall, P95=0.052ms
+ 900/1,400 = 64.3% hot recall
+bug, slow: 0.1ms > 0.0ms
+PRIORITY: max_size=1,400, target=1,900, overhead=2.8x
+ 1,400/1,900 = 73.7% recall, P95=0.079ms
+ 1,400/1,900 = 73.7% hot recall
+bug, slow: 0.1ms > 0.0ms
+PRIORITY: max_size=500, target=1,000, overhead=2.2x
+ 500/1,000 = 50.0% recall, P95=0.030ms
+ 500/1,000 = 50.0% hot recall
+new best: 50.0% recall, P95=0.0ms
+PRIORITY: max_size=1,000, target=1,500, overhead=2.4x
+ 1,000/1,500 = 66.7% recall, P95=0.057ms
+ 1,000/1,500 = 66.7% hot recall
+bug, slow: 0.1ms > 0.0ms
+PRIORITY: max_size=1,500, target=2,000, overhead=2.6x
+ 1,500/2,000 = 75.0% recall, P95=0.085ms
+ 1,500/2,000 = 75.0% hot recall
+bug, slow: 0.1ms > 0.0ms
+
+========================================================================================================================
+REAL 2018 CITI BIKE EVALUATION RESULTS 🚴
+========================================================================================================================
+30,000 events -> 3,024 hot path patterns
+P95: 0.000ms
+Hot sations: [387, 293, 519, 72, 426, 497, 402, 435, 285, 477]
+Results
+['50%', '60%', '70%', '80%', '90%']
+simple       76.19047619047619 77.27272727272727 78.26086956521739 79.16666666666666 80.0 
+efficient    66.60000000000001 65.5625 64.64705882352942 63.83333333333333 62.45 
+fifo         78.26086956521739 79.16666666666666 80.0 80.76923076923077 81.48148148148148 
+batched      68.17647058823529 72.23076923076923 71.0 69.93333333333334 69.0 
+random       fail.fail.fail.fail.fail.
+priority     fail.fail.fail.fail.50.0 
+all: 30
+successful: 21
+failed: 9
+success rate: 70.0%
+failure rate: 30.0%
+50%: FIFO (78.3% recall)
+60%: FIFO (79.2% recall)
+70%: FIFO (80.0% recall)
+80%: FIFO (80.8% recall)
+90%: FIFO (81.5% recall)
+completed!

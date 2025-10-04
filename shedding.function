@@ -1,0 +1,90 @@
+\section{Implementation}
+
+\subsection{Load Shedding Strategy Algorithms}
+
+We implemented six distinct load shedding strategies, each with specific algorithmic characteristics and performance trade-offs optimized for different operational scenarios.
+
+\subsubsection{FIFO Strategy (First-In-First-Out)}
+
+The FIFO strategy implements the simplest load shedding approach by removing the oldest partial matches when storage capacity is exceeded:
+
+\begin{lstlisting}[language=Python, caption=FIFO Load Shedding Implementation]
+def _shed_fifo(self, max_size):
+    excess = len(self._partial_matches) - max_size
+    if excess <= 0:
+        return
+    del self._partial_matches[:excess]
+\end{lstlisting}
+
+\textbf{Time Complexity:} O(n-excess) - optimal for frequent shedding operations
+
+\textbf{Space Complexity:} O(1) additional space required
+
+\textbf{Design Rationale:} Minimal computational overhead with predictable temporal ordering preservation
+
+
+\begin{table}[h]
+\centering
+\caption{Load Shedding Strategy Complexity Comparison}
+\begin{tabular}{@{}lccc@{}}
+\toprule
+Strategy & Time Complexity & Space Complexity \\
+\midrule
+FIFO & O(n-excess) & O(1)  \\
+Efficient & O(n log n) & O(n)  \\
+Batched & O(n log n) & O(n)  \\
+Random & O(n) & O(excess)  \\
+
+\bottomrule
+\end{tabular}
+\label{tab:complexity}
+\end{table}
+
+\subsubsection{Additional Strategies Implementation}
+
+\textbf{Batched Strategy:} Implements hysteresis mechanism with 20\% tolerance and 25\% reduction to minimize shedding frequency through delayed activation:
+
+\begin{lstlisting}[language=Python, caption=Batched Load Shedding Strategy]
+def _shed_batched(self, max_size):
+    current_size = len(self._partial_matches)
+    if current_size <= max_size * 1.2:  # 20% tolerance
+        return
+    target_size = int(max_size * 0.75)  # 25% reduction
+    excess = current_size - target_size
+    if self._sorted_by_arrival_order:
+        del self._partial_matches[:excess]
+    else:
+        self._partial_matches.sort(
+            key=lambda pm: pm.first_timestamp)
+        del self._partial_matches[:excess]
+\end{lstlisting}
+
+\textbf{Random Strategy:} Applies uniform probability distribution for partial match removal, avoiding temporal bias but potentially sacrificing completion likelihood:
+
+\begin{lstlisting}[language=Python, caption=Random Load Shedding Strategy]
+def _shed_random(self, max_size):
+    import random
+    excess = len(self._partial_matches) - max_size
+    if excess <= 0:
+        return
+    indices_to_remove = set(random.sample(
+        range(len(self._partial_matches)), excess))
+    self._partial_matches = [pm for i, pm in 
+        enumerate(self._partial_matches) 
+        if i not in indices_to_remove]
+\end{lstlisting}
+
+\textbf{Efficient Strategy:} Implements adaptive target sizing through aggressive batch removal to reduce shedding frequency:
+
+\begin{lstlisting}[language=Python, caption=Efficient Load Shedding Strategy]
+def _shed_efficient(self, max_size):
+    current_size = len(self._partial_matches)
+    excess = current_size - max_size
+    if excess <= 0:
+        return
+    target_size = max(max_size // 2, 10)
+    excess = current_size - target_size
+    self._partial_matches.sort(
+        key=lambda pm: pm.first_timestamp)
+    del self._partial_matches[:excess]
+\end{lstlisting}

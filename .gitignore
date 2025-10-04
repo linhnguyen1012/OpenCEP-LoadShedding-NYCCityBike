@@ -1,0 +1,15 @@
+*.o
+*.a
+*.so
+*.lo
+*.la
+*.dll
+*.class
+*.exe
+
+/venv
+/env
+*.pyc
+
+*.key
+*.pem
