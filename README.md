@@ -27,7 +27,7 @@ OpenCEP is a framework for pattern detection in event streams. For detailed fram
 
 ## Load Shedding Implementation
 
-This project implements **6 load shedding strategies** for managing partial match storage in CEP systems:
+This project implements **5 load shedding strategies** for managing partial match storage in CEP systems:
 
 1. **Simple/FIFO** - Remove oldest partial matches (O(n-excess) complexity)
 2. **Efficient** - Adaptive batch removal to reduce shedding frequency (O(n log n))
