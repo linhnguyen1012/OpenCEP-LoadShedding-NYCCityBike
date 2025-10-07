@@ -22,7 +22,6 @@ from typing import List, Dict, Set, Optional
 import statistics
 from collections import defaultdict
 
-
 from base.Event import Event
 from base.DataFormatter import DataFormatter, EventTypeClassifier
 from tree.PatternMatchStorage import UnsortedPatternMatchStorage
@@ -504,8 +503,6 @@ class RealCitiBike2018Evaluator:
         """Print real data evaluation results"""
         
         print(f"\n{'='*120}")
-        print("REAL 2018 CITI BIKE EVALUATION RESULTS 🚴")
-        print(f"{'='*120}")
         
         baseline_latency = results['baseline_latency']
         bounds_config = results['bounds_config']
@@ -522,7 +519,6 @@ class RealCitiBike2018Evaluator:
         # Results table
         print("Results")
         print(bounds)
-        
         
         total_tests = 0
         successful_tests = 0
